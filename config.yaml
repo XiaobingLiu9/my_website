@@ -81,7 +81,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: backround_sunset.jpg
+      - image: lbs.jpg
         subtitle: I love sunsets
         title: About me
         url: blogs/aliquam
