@@ -1,0 +1,89 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-10-13"
+description: Simulation of Brownian Motion # the title that will show up once someone gets to this page
+draft: false
+image: spices.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: simulation_bm # slug is the shorthand URL address... no spaces plz
+title: Simulation of Brownian Motion
+---
+  
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+# Brief introduction of Brownian Motion
+Let $(\Omega,\cF_t,\P)$ be a filtered probability space. 
+
+A stochastic process $B_t$ adapted to $\cF_t$ is called a (standard) Brownian motion or a Wiener process if it
+satisfies the following conditions
+
+* $\P[\omega: B_0(\omega) = 0] = 1$, i.e., the process starts at zero almost surely.
+
+
+* For any $0 \leq s < t$, the random variable $B_t - B_s$ is normally distributed with mean 0 and variance $t-s$, i.e., for any $a<b$,
+$$
+\P[a \leq B_t - B_s \leq b] = \frac{1}{\sqrt{2\pi(t-s)}}\int_a^b e^{-\frac{x^2}{2(t-s)}}dx.
+$$
+
+
+* $B_t$ has independent increment, i.e., for any $0\leq t_1 < t_2 < \cdots < t_n$, the random variables
+  $$
+    B_{t_1}, \; B_{t_2} - B_{t_1},\; \cdots, \; B_{t_n} - B_{t_{n-1}}
+  $$
+are independent.
+
+
+* Almost all sample paths of $B_t$ are continuous functions, i.e.,
+  $$
+    \P[\omega:B_t(\omega) \mbox{ is continuous } ] = 1
+  $$
+  
+## Remark
+* A Brownian motion is sometimes defined as a stochastic process satisfying only the first 3 conditions in the  definition. Such a process always has continuous modification by applying Kolmogorov's continuity criterion.
+* The standard Brownian motion starts at 0. A Brownian motion starts at $x\neq 0$ is obtain by shifting $x + B_t$.
+```{r simulation}
+# the code demonstrates how to simulate Brownian paths 
+
+NSim <- 1e4   # number of samples at each step
+NSteps <- 100   # number of steps 
+Tfin <- 1    # terminal time
+B <- matrix(0,NSim,NSteps+1)  # initialize the Brownians
+
+# simulation step
+for (i in 1:NSteps){
+  dB <- rnorm(NSim)
+  dB <- dB - mean(dB)  # now dB has mean 0
+  dB <- dB/sd(dB)  # now dB has variance 1
+  dB <- sqrt(Tfin/NSteps)*dB
+  B[,i+1] <- B[,i] + dB
+}
+
+t <- (0:NSteps)/NSteps*Tfin
+par(mfrow=c(2,2))
+
+# plot a Browian path
+plot(t,B[5000,],type='l',col='blue',ylab='Bt sample path')
+```
+
