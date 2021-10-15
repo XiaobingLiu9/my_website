@@ -11,8 +11,7 @@ categories:
 - ''
 ---
 
-
-Let ($\Omega$,$cF_t$,$P$) be a filtered probability space. 
+Let ($$\Omega$$,$$cF_t$$,$$P$$) be a filtered probability space. 
 
 A stochastic process $B_t$ adapted to $cF_t$ is called a (standard) Brownian motion or a Wiener process if it
 satisfies the following conditions
