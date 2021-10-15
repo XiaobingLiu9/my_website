@@ -13,25 +13,7 @@ categories:
 
 
 
-<p>Let (<span class="math display">\[\Omega\]</span>,<span class="math display">\[cF_t\]</span>,<span class="math display">\[P\]</span>) be a filtered probability space.</p>
-<p>A stochastic process <span class="math inline">\(B_t\)</span> adapted to <span class="math inline">\(cF_t\)</span> is called a (standard) Brownian motion or a Wiener process if it
-satisfies the following conditions</p>
-<ul>
-<li><p>$P[: B_0() = 0] = 1 $, i.e., the process starts at zero almost surely.</p></li>
-<li><p>For any <span class="math inline">\(0 \leq s &lt; t\)</span>, the random variable <span class="math inline">\(B_t - B_s\)</span> is normally distributed with mean 0 and variance <span class="math inline">\(t-s\)</span>, i.e., for any <span class="math inline">\(a&lt;b\)</span>,
-<span class="math inline">\(P[a \leq B_t - B_s \leq b] = \frac{1}{\sqrt{2\pi(t-s)}}\int_a^b e^{-\frac{x^2}{2(t-s)}}dx.\)</span></p></li>
-<li><p><span class="math inline">\(B_t\)</span> has independent increment, i.e., for any <span class="math inline">\(0\leq t_1 &lt; t_2 &lt; \cdots &lt; t_n\)</span>, the random variables
-<span class="math inline">\(B_{t_1}, \; B_{t_2} - B_{t_1},\; \cdots, \; B_{t_n} - B_{t_{n-1}}\)</span>
-are independent.</p></li>
-<li><p>Almost all sample paths of <span class="math inline">\(B_t\)</span> are continuous functions, i.e.,
-<span class="math inline">\(P[\omega:B_t(\omega) \mbox{ is continuous } ] = 1\)</span></p></li>
-</ul>
-<div id="remark" class="section level3">
-<h3>Remark</h3>
-<ul>
-<li>A Brownian motion is sometimes defined as a stochastic process satisfying only the first 3 conditions in the definition. Such a process always has continuous modification by applying Kolmogorov’s continuity criterion.</li>
-<li>The standard Brownian motion starts at 0. A Brownian motion starts at <span class="math inline">\(x\neq 0\)</span> is obtain by shifting <span class="math inline">\(x + B_t\)</span>.</li>
-</ul>
+
 <pre class="r"><code># the code demonstrates how to simulate Brownian paths 
 
 NSim &lt;- 1e4   # number of samples at each step
@@ -54,4 +36,3 @@ par(mfrow=c(2,2))
 # plot a Browian path
 plot(t,B[5000,],type=&#39;l&#39;,col=&#39;blue&#39;,ylab=&#39;Bt sample path&#39;)</code></pre>
 <p><img src="/blogs/simulation_of_bm_files/figure-html/simulation-1.png" width="648" style="display: block; margin: auto;" /></p>
-</div>
