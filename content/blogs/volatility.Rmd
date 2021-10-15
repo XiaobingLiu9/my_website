@@ -1,0 +1,66 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-10-15"
+description: Volatility of SPX # the title that will show up once someone gets to this page
+draft: false
+image: vol.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: volatility # slug is the shorthand URL address... no spaces plz
+title: Volatility of SPX
+---
+  
+
+```{r}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(vroom)
+library(tidyquant)
+library(rvest)    # scrape websites
+library(purrr)  
+library(lubridate) #to handle dates
+library(ggrepel)
+# load required package quantmod
+library(quantmod)
+```
+
+```{r}
+# download time series for SPX since 2014-01-01 from Yahoo Finance (default source)
+getSymbols("^GSPC", from='2014-01-01')
+
+# extract the dividend adjusted price/index
+spx <- GSPC$GSPC.Adjusted
+
+# dimension/size of the data
+dim(spx)
+
+# brief look at spx
+head(spx)
+tail(spx)
+
+# summary statistics
+summary(spx)
+```
+
+
+# plot spx
+plot(spx)
+
+# calculate annualized vol series of spx log return, using 25-day rolling windows
+vol_spx <- volatility(spx, n=25, N=252, calc='close')
+
+# brief look at spx vol series
+head(vol_spx)
+tail(vol_spx)
+
+plot(vol_spx)
+
+spx_scaled <- (spx - mean(spx))/(max(spx) - min(spx))
+plot(spx_scaled)
+lines(vol_spx, col='blue', lty=2)
+```

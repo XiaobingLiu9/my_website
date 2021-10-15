@@ -95,8 +95,8 @@ params:
         url: blogs/simulation_bm
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
+        title: Volatility of SPX
+        url: blogs/volatility
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Consequat
