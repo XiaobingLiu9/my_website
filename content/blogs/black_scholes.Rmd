@@ -1,0 +1,95 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-09-30"
+description: Black Scholes Model # the title that will show up once someone gets to this page
+draft: false
+image: bsm.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: bsm # slug is the shorthand URL address... no spaces plz
+title: Black Scholes Model
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The formula
+```{r}
+# Black-Scholes formula
+bsCall <- function(s, K, sigma, t, r=0, d=0){
+    d1 <- (log(s/K) + (r - d)*t)/(sigma*sqrt(t)) + sigma*sqrt(t)/2
+    d2 <- d1 - sigma*sqrt(t)
+    
+    c <- s*exp(-d*t)*pnorm(d1) - K*exp(-r*t)*pnorm(d2)
+    delta <- exp(-d*t)*pnorm(d1)
+    Gam <- dnorm(d1)/s/sigma/sqrt(t)
+    
+    data.frame(c, delta, Gam)
+}
+
+bsPut <- function(s, K, sigma, t, r=0, d=0){
+    d1 <- (log(s/K) + (r - d)*t)/(sigma*sqrt(t)) + sigma*sqrt(t)/2
+    d2 <- d1 - sigma*sqrt(t)
+    
+    p <- K*exp(-r*t)*pnorm(-d2) - s*exp(-d*t)*pnorm(-d1)
+    delta <- -exp(-d*t)*pnorm(-d1)
+    Gam <- dnorm(d1)/s/sigma/sqrt(t)
+    
+    data.frame(p, delta, Gam)
+}
+```
+
+We try 3 examples to apply our formula.
+```{r}
+bsCall(K=100, s=100, t=1, sigma=.3)
+bsCall(K=100, s=100, t=1, sigma=.3, r=0.05)
+bsCall(100, 100, 1, .3)
+```
+
+## Explore the option price
+### option price as a function of strike
+```{r}
+
+S <- 100
+sig <- 0.3
+Texp <- 0.3
+
+tmpc <- function(x) bsCall(S, x, sig, Texp)$c
+tmpp <- function(x) bsPut(S, x, sig, Texp)$p
+
+# plot
+par(mfrow=c(1, 2))
+curve(tmpc, from=50, to=150, col='blue', xlab='K', ylab='call price', las=1)
+curve(tmpp, from=50, to=150, col='blue', xlab='K', ylab='put price', las=1)
+
+```
+
+### option price as a function of the underlying
+```{r}
+
+K <- 100
+sig <- 0.3
+Texp <- 0.3
+
+# payoffs of call and put
+payoffC <- function(s, k) {(s - k)*(s > k)}
+payoffP <- function(s, k) {(k - s)*(k > s)}
+
+# some temp functions
+tmpc <- function(x) bsCall(x, K, sig, Texp)$c
+tmpp <- function(x) bsPut(x, K, sig, Texp)$p
+tmpPayoffc <- function(x) payoffC(x, K)
+tmpPayoffp <- function(x) payoffP(x, K)
+
+# plot
+par(mfrow=c(1, 2))
+curve(tmpc, from=50, to=150, col='blue', xlab='s', ylab='call price', las=1)
+curve(tmpPayoffc, from=50, to=150, col='red', add=TRUE)
+curve(tmpp, from=50, to=150, col='blue', xlab='s', ylab='put price', las=1)
+curve(tmpPayoffp, from=50, to=150, col='red', add=TRUE)
+
+```
+

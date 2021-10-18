@@ -8,8 +8,7 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
-      AND RELEASED UNDER THE CREATIVE COMMONS.
+      This is my R portfolio website.
     title: Hi, my name is Ivy Liu
   blog: {}
   contact:
@@ -82,37 +81,38 @@ params:
     enable: yes
     showcase:
       - image: lbs.jpg
-        subtitle: I love sunsets
+        #subtitle: I love sunsets
         title: About me
-        url: blogs/aliquam
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Risk Return of DJIA Industrial Average
-        url: blogs/risk_return
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Simulation of Brownian Motion
-        url: blogs/simulation_bm
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Volatility of SPX
-        url: blogs/volatility
+        url: blogs/about_me
       - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
+        #subtitle: Ipsum Dolor Sit Amet
         title: Consequat
         url: blogs/ipsum
       - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
-  two:
-    buttonText: Get Started
-    enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
-    title: Massa libero
-    url: blogs
+        #subtitle: Feugiat Amet Tempus
+        title: Black Scholes Model
+        url: blogs/bsm
+      - image: pic02.jpg
+        #subtitle: Feugiat Amet Tempus
+        title: Risk Return of DJIA Industrial Average
+        url: blogs/risk_return
+      - image: pic03.jpg
+        #subtitle: Lorem Etiam Nullam
+        title: Simulation of Brownian Motion
+        url: blogs/simulation_bm
+      - image: pic07.jpg
+        #subtitle: Nisl Sed Aliquam
+        title: Volatility of SPX
+        url: blogs/volatility
+
+  #two:
+    #buttonText: Get Started
+    #enable: yes
+    #subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
+     # \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
+     # condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
+     # pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
+     # Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
+     # amet pharetra et feugiat tempus."
+    #title: Thanks for browsing!
+    #url: blogs

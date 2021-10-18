@@ -14,80 +14,21 @@ title: Volatility of SPX
 
 
 
-<pre class="r"><code>library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-## ✓ tibble  3.1.5     ✓ dplyr   1.0.7
-## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-## ✓ readr   2.0.2     ✓ forcats 0.5.1</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(lubridate)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;lubridate&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     date, intersect, setdiff, union</code></pre>
-<pre class="r"><code>library(here)</code></pre>
-<pre><code>## here() starts at /Users/ll/Desktop/my_website</code></pre>
-<pre class="r"><code>library(skimr)
-library(janitor)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;janitor&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     chisq.test, fisher.test</code></pre>
-<pre class="r"><code>library(vroom)
-library(tidyquant)</code></pre>
-<pre><code>## Loading required package: PerformanceAnalytics</code></pre>
-<pre><code>## Loading required package: xts</code></pre>
-<pre><code>## Loading required package: zoo</code></pre>
-<pre><code>## 
-## Attaching package: &#39;zoo&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     as.Date, as.Date.numeric</code></pre>
-<pre><code>## 
-## Attaching package: &#39;xts&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     first, last</code></pre>
-<pre><code>## 
-## Attaching package: &#39;PerformanceAnalytics&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:graphics&#39;:
-## 
-##     legend</code></pre>
-<pre><code>## Loading required package: quantmod</code></pre>
-<pre><code>## Loading required package: TTR</code></pre>
-<pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
-##   method            from
-##   as.zoo.data.frame zoo</code></pre>
-<pre><code>## ══ Need to Learn tidyquant? ════════════════════════════════════════════════════
-## Business Science offers a 1-hour course - Learning Lab #9: Performance Analysis &amp; Portfolio Optimization with tidyquant!
-## &lt;/&gt; Learn more at: https://university.business-science.io/p/learning-labs-pro &lt;/&gt;</code></pre>
-<pre class="r"><code>library(rvest)    # scrape websites</code></pre>
-<pre><code>## 
-## Attaching package: &#39;rvest&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:readr&#39;:
-## 
-##     guess_encoding</code></pre>
-<pre class="r"><code>library(purrr)  
+<pre class="r"><code>library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(vroom)
+library(tidyquant)
+library(rvest)    # scrape websites
+library(purrr)  
 library(lubridate) #to handle dates
 library(ggrepel)
 # load required package quantmod
-library(quantmod)
-
-# download time series for SPX since 2014-01-01 from Yahoo Finance (default source)
+library(quantmod)</code></pre>
+<pre class="r"><code># download time series for SPX since 2014-01-01 from Yahoo Finance (default source)
 getSymbols(&quot;^GSPC&quot;, from=&#39;2014-01-01&#39;)</code></pre>
-<pre><code>## &#39;getSymbols&#39; currently uses auto.assign=TRUE by default, but will
-## use auto.assign=FALSE in 0.5-0. You will still be able to use
-## &#39;loadSymbols&#39; to automatically load data. getOption(&quot;getSymbols.env&quot;)
-## and getOption(&quot;getSymbols.auto.assign&quot;) will still be checked for
-## alternate defaults.
-## 
-## This message is shown once per session and may be disabled by setting 
-## options(&quot;getSymbols.warning4.0&quot;=FALSE). See ?getSymbols for details.</code></pre>
 <pre><code>## [1] &quot;^GSPC&quot;</code></pre>
 <pre class="r"><code># extract the dividend adjusted price/index
 spx &lt;- GSPC$GSPC.Adjusted
@@ -98,20 +39,20 @@ dim(spx)</code></pre>
 <pre class="r"><code># brief look at spx
 head(spx)</code></pre>
 <pre><code>##            GSPC.Adjusted
-## 2014-01-02       1831.98
-## 2014-01-03       1831.37
-## 2014-01-06       1826.77
-## 2014-01-07       1837.88
-## 2014-01-08       1837.49
-## 2014-01-09       1838.13</code></pre>
+## 2014-01-02          1832
+## 2014-01-03          1831
+## 2014-01-06          1827
+## 2014-01-07          1838
+## 2014-01-08          1837
+## 2014-01-09          1838</code></pre>
 <pre class="r"><code>tail(spx)</code></pre>
 <pre><code>##            GSPC.Adjusted
-## 2021-10-07       4399.76
-## 2021-10-08       4391.34
-## 2021-10-11       4361.19
-## 2021-10-12       4350.65
-## 2021-10-13       4363.80
-## 2021-10-14       4438.26</code></pre>
+## 2021-10-07          4400
+## 2021-10-08          4391
+## 2021-10-11          4361
+## 2021-10-12          4351
+## 2021-10-13          4364
+## 2021-10-14          4438</code></pre>
 <pre class="r"><code># summary statistics
 summary(spx)</code></pre>
 <pre><code>##      Index            GSPC.Adjusted 
@@ -121,33 +62,21 @@ summary(spx)</code></pre>
 ##  Mean   :2017-11-23   Mean   :2658  
 ##  3rd Qu.:2019-11-04   3rd Qu.:2966  
 ##  Max.   :2021-10-14   Max.   :4537</code></pre>
-<pre class="r"><code># plot spx
-plot(spx)</code></pre>
-<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code># calculate annualized vol series of spx log return, using 25-day rolling windows
-vol_spx &lt;- volatility(spx, n=25, N=252, calc=&#39;close&#39;)
-
-# brief look at spx vol series
-head(vol_spx)</code></pre>
-<pre><code>##            [,1]
-## 2014-01-02   NA
-## 2014-01-03   NA
-## 2014-01-06   NA
-## 2014-01-07   NA
-## 2014-01-08   NA
-## 2014-01-09   NA</code></pre>
-<pre class="r"><code>tail(vol_spx)</code></pre>
-<pre><code>##                 [,1]
-## 2021-10-07 0.1425895
-## 2021-10-08 0.1425668
-## 2021-10-11 0.1435625
-## 2021-10-12 0.1435924
-## 2021-10-13 0.1439288
-## 2021-10-14 0.1535388</code></pre>
-<pre class="r"><code>plot(vol_spx)</code></pre>
-<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-<pre class="r"><code>spx_scaled &lt;- (spx - mean(spx))/(max(spx) - min(spx))
-plot(spx_scaled)</code></pre>
-<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
-<pre class="r"><code>lines(vol_spx, col=&#39;blue&#39;, lty=2)</code></pre>
-<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<div id="plot-spx" class="section level1">
+<h1>plot spx</h1>
+<p>plot(spx)</p>
+</div>
+<div id="calculate-annualized-vol-series-of-spx-log-return-using-25-day-rolling-windows" class="section level1">
+<h1>calculate annualized vol series of spx log return, using 25-day rolling windows</h1>
+<p>vol_spx &lt;- volatility(spx, n=25, N=252, calc=‘close’)</p>
+</div>
+<div id="brief-look-at-spx-vol-series" class="section level1">
+<h1>brief look at spx vol series</h1>
+<p>head(vol_spx)
+tail(vol_spx)</p>
+<p>plot(vol_spx)</p>
+<p>spx_scaled &lt;- (spx - mean(spx))/(max(spx) - min(spx))
+plot(spx_scaled)
+lines(vol_spx, col=‘blue’, lty=2)
+```</p>
+</div>
