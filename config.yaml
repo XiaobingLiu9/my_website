@@ -84,19 +84,19 @@ params:
         #subtitle: I love sunsets
         title: About me
         url: blogs/about_me
-      - image: pic05.jpg
+      - image: greatwall.jpg
         #subtitle: Ipsum Dolor Sit Amet
         title: Welcome to my hometown - Beijing!
         url: blogs/beijing
-      - image: pic06.jpg
+      - image: finance.jpg
         #subtitle: Feugiat Amet Tempus
         title: Black Scholes Model
         url: blogs/bsm
-      - image: pic02.jpg
+      - image: dj.jpg
         #subtitle: Feugiat Amet Tempus
         title: Risk Return of DJIA Industrial Average
         url: blogs/risk_return
-      - image: pic03.jpg
+      - image: motion.jpg
         #subtitle: Lorem Etiam Nullam
         title: Simulation of Brownian Motion
         url: blogs/simulation_bm

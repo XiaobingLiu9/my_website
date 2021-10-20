@@ -10,6 +10,7 @@ image: bj1.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpe
 keywords: ""
 slug: beijing # slug is the shorthand URL address... no spaces plz
 title: Welcome to Beijing
+output: html_document
 ---
 
 
@@ -17,26 +18,27 @@ title: Welcome to Beijing
 <div id="attractions" class="section level2">
 <h2>Attractions</h2>
 <p>From ancient walled capital to showpiece megacity in barely a century, Beijing, spins a breathless yarn of triumph, tragedy, endurance and innovation.</p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;static&quot;,&quot;bjpicture1.jpg&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/ll/Desktop/my_website/static/bjpicture1.jpg" width="3120" /></p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;static&quot;,&quot;bjpicture2.jpg&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/ll/Desktop/my_website/static/bjpicture2.jpg" width="4752" /></p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;static&quot;,&quot;building1.jpg&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/ll/Desktop/my_website/static/building1.jpg" width="2016" />
-On the right part of the picture above is the landmark modern building in Beijing, here is its close shot. Two period of my internships have finished here.</p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;static&quot;,&quot;building2.jpg&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/ll/Desktop/my_website/static/building2.jpg" width="2000" /></p>
+<pre class="r"><code>library(knitr)
+knitr::include_graphics(&quot;https://images.unsplash.com/photo-1577706881850-bf7c7d8906a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2064&amp;q=80&quot;)</code></pre>
+<p><img src="https://images.unsplash.com/photo-1577706881850-bf7c7d8906a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2064&amp;q=80" /><!-- --></p>
+<pre class="r"><code>knitr::include_graphics(&quot;https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80&quot;)</code></pre>
+<p><img src="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80" /><!-- --></p>
+<pre class="r"><code>knitr::include_graphics(&quot;https://images.unsplash.com/photo-1543158015-04650a9d832a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2833&amp;q=80&quot;)</code></pre>
+<p><img src="https://images.unsplash.com/photo-1543158015-04650a9d832a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2833&amp;q=80" /><!-- --></p>
+<p>On the right part of the picture above is the landmark modern building in Beijing, here is its close shot. Two period of my internships have finished here.</p>
+<pre class="r"><code>knitr::include_graphics(&quot;https://images.unsplash.com/photo-1555414160-5b5862c3d240?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=928&amp;q=80&quot;)</code></pre>
+<p><img src="https://images.unsplash.com/photo-1555414160-5b5862c3d240?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=928&amp;q=80" /><!-- --></p>
 </div>
 <div id="have-you-eaten" class="section level2">
 <h2>Have you eaten?</h2>
 <p>In Beijing, chī le ma? (have you eaten?) is literally how locals greet their neighbours. Food is the glue that binds all Beijingers, no matter their beliefs or bank balance.</p>
 <p>Beijing roast duck, or Peking duck, is the epitome of Beijing cuisine and the dish you must try when visiting Beijing. The dish is mostly esteemed for the thin, crispy skin, with authentic versions of the dish serving mostly skin and little meat.</p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;static&quot;,&quot;duck.jpg&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/ll/Desktop/my_website/static/duck.jpg" width="2100" /></p>
+<pre class="r"><code>knitr::include_graphics(&quot;https://images.pexels.com/photos/5848599/pexels-photo-5848599.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260&quot;)</code></pre>
+<p><img src="https://images.pexels.com/photos/5848599/pexels-photo-5848599.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" /><!-- --></p>
 <p>Jiaozi (Chinese dumplings) is another dish that can be found anywhere across Beijing. A plate of Jiaozi with a soy sauce, vinegar and chili dip is synonymous with Northern Chinese cuisine.</p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;static&quot;,&quot;jiaozi.jpg&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/ll/Desktop/my_website/static/jiaozi.jpg" width="522" />
-Zhajiang mian (Noodles with Soybean Paste) is very popular when it comes to traditional Beijing cuisine, and is sometimes referred to simply as ‘Beijing noodles’. It has three main ingredients: wide hand-pulled noodles, vegetable pieces, and pork. Vegetables vary seasonally, but there are never less than seven kinds. It is an ideal lunch time snack for visitors short on time as it is usually ready seconds after you order. As an added bonus it is very inexpensive.</p>
-<pre class="r"><code>knitr::include_graphics(here::here(&quot;static&quot;,&quot;noodles.jpg&quot;), error = FALSE)</code></pre>
-<p><img src="/Users/ll/Desktop/my_website/static/noodles.jpg" width="414" /></p>
+<pre class="r"><code>knitr::include_graphics(&quot;https://images.unsplash.com/photo-1626322751504-930506dd41ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80&quot;)</code></pre>
+<p><img src="https://images.unsplash.com/photo-1626322751504-930506dd41ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80" /><!-- --></p>
+<p>Zhajiang mian (Noodles with Soybean Paste) is very popular when it comes to traditional Beijing cuisine, and is sometimes referred to simply as ‘Beijing noodles’. It has three main ingredients: wide hand-pulled noodles, vegetable pieces, and pork. Vegetables vary seasonally, but there are never less than seven kinds. It is an ideal lunch time snack for visitors short on time as it is usually ready seconds after you order. As an added bonus it is very inexpensive.</p>
+<pre class="r"><code>knitr::include_graphics(&quot;https://upload.wikimedia.org/wikipedia/commons/3/36/Noodles_with_soy_bean_paste.jpg&quot;)</code></pre>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Noodles_with_soy_bean_paste.jpg" /><!-- --></p>
 </div>
