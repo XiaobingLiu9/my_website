@@ -5,10 +5,36 @@ categories:
 date: "2021-09-30"
 description: About ME # the title that will show up once someone gets to this page
 draft: false
-image: spices.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: ivy.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
 
 keywords: ""
 slug: about_me # slug is the shorthand URL address... no spaces plz
 title: About ME
 ---
+
+My name is Xiaobing Liu, and you can call me Ivy. I come from Beijing, a charming and unique megacity in China. I graduated from Peking University in China and majored in finance. I love travel and sports, I'm good at playing tennis and basketball. During an exchange semester at HEC Paris, I traveled to various countries in Europe. I consider myself as a rational person and like to analyze or solve problems with data. I am very happy to come to a different world of data these days!
+
+### Business Experience
+##### CHINA INTERNATIONAL CAPITAL CORPORATION (CICC), BEIJING, CHINA
+##### M&A Intern (4 months)
+	
+*	Assisted in a more than CNY 50 bn Academy-run enterprise debt restructuring deal, performing design and implementation of Financial and IT service sectors' disposal
+*	Prepared pitches for several Hongkong-listed companies' privatization, proficient in calculating turnover rate and holding costs of shareholders and familiar with privatization process
+
+##### CHINA INTERNATIONAL CAPITAL CORPORATION (CICC), BEIJING, CHINA
+##### Research Intern (4 months)
+*	Collected primary macroeconomic data from multiple sources
+*	Facilitated build-up process of company-owned database of macroeconomic data, enabling research on macroeconomy can be executed on a more accurate and systematic basis
+
+##### BYTEDANCE LTD., BEIJING, CHINA
+##### Strategic Analysis Department Intern (4 months)
+*	Conducted desk research and interviews, exploring what can be improved on auction advertisements, one of my proposals was adopted with a working group established to carry forward
+*	Processed and analyzed data of experimental results of underlying basic strategies through SQL and Excel, aiming to help new ads win in early bidding
+
+### Extracurricular Experience
+*	Organized to reform official journals from paper to electronic as leader of the Publicity Department in the Student Union. The new one received an average of 40,000+ page views in official accounts
+*	Initiated a survey on waiting and queueing problem for students to eat lunch in canteen, ultimately promoted launch of school's counter meal service, helping students save time of having lunch
+*	Performed as research assistant instructed by Professor Xu Minya
+*	Collaborated with other members of school women basketball team and achieved third place in school basketball games
+
 

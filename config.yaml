@@ -86,8 +86,8 @@ params:
         url: blogs/about_me
       - image: pic05.jpg
         #subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
+        title: Welcome to my hometown - Beijing!
+        url: blogs/beijing
       - image: pic06.jpg
         #subtitle: Feugiat Amet Tempus
         title: Black Scholes Model

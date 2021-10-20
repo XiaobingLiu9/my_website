@@ -14,30 +14,7 @@ draft: no
 
 ## Brief introduction to Brownian Motion
 
-Let ($\Omega,cF_t,P$) be a filtered probability space. 
-
-A stochastic process $B_{t}$ adapted to $cF_t$ is called a (standard) Brownian motion or a Wiener process if it
-satisfies the following conditions
-
-* $$P[\omega: B_0(\omega) = 0] = 1$$, i.e., the process starts at zero almost surely.
-
-
-* For any $0 \leq s < t$, the random variable $B_t - B_s$ is normally distributed with mean 0 and variance $t-s$, i.e., for any $a<b$,
-$$P[a \leq B_t - B_s \leq b] = \frac{1}{\sqrt{2\pi(t-s)}}\int_a^b e^{-\frac{x^2}{2(t-s)}}dx.$$
-
-
-* $B_t$ has independent increment, i.e., for any $0\leq t_1 < t_2 < \cdots < t_n$, the random variables
-  $B_{t_1}, \; B_{t_2} - B_{t_1},\; \cdots, \; B_{t_n} - B_{t_{n-1}}$
-are independent.
-
-
-* Almost all sample paths of $B_t$ are continuous functions, i.e.,
-  $P[\omega:B_t(\omega) \mbox{ is continuous } ] = 1$
-  
-
-### Remark
-* A Brownian motion is sometimes defined as a stochastic process satisfying only the first 3 conditions in the  definition. Such a process always has continuous modification by applying Kolmogorov's continuity criterion.
-* The standard Brownian motion starts at 0. A Brownian motion starts at $x\neq 0$ is obtain by shifting $x + B_t$.
+Brownian motion is a simple continuous stochastic process that is widely used in physics and finance for modeling random behavior that evolves over time. Examples of such behavior are the random movements of a molecule of gas or fluctuations in an asset’s price.
 
 
 ## Code
