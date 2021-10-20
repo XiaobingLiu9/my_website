@@ -14,7 +14,7 @@ title: About ME
 
 My name is Xiaobing Liu, and you can call me Ivy. I come from Beijing, a charming and unique megacity in China. I graduated from Peking University in China and majored in finance. I love travel and sports, I'm good at playing tennis and basketball. During an exchange semester at HEC Paris, I traveled to various countries in Europe. I consider myself as a rational person and like to analyze or solve problems with data. I am very happy to come to a different world of data these days!
 
-### Business Experience
+## Business Experience
 ##### CHINA INTERNATIONAL CAPITAL CORPORATION (CICC), BEIJING, CHINA
 ##### M&A Intern (4 months)
 	
@@ -31,7 +31,7 @@ My name is Xiaobing Liu, and you can call me Ivy. I come from Beijing, a charmin
 *	Conducted desk research and interviews, exploring what can be improved on auction advertisements, one of my proposals was adopted with a working group established to carry forward
 *	Processed and analyzed data of experimental results of underlying basic strategies through SQL and Excel, aiming to help new ads win in early bidding
 
-### Extracurricular Experience
+## Extracurricular Experience
 *	Organized to reform official journals from paper to electronic as leader of the Publicity Department in the Student Union. The new one received an average of 40,000+ page views in official accounts
 *	Initiated a survey on waiting and queueing problem for students to eat lunch in canteen, ultimately promoted launch of school's counter meal service, helping students save time of having lunch
 *	Performed as research assistant instructed by Professor Xu Minya

@@ -16,6 +16,8 @@ draft: no
 
 Brownian motion is a simple continuous stochastic process that is widely used in physics and finance for modeling random behavior that evolves over time. Examples of such behavior are the random movements of a molecule of gas or fluctuations in an asset’s price.
 
+In this code, I'm trying to simulate the BM paths.
+
 
 ## Code
 ```{r, setup, echo=FALSE}

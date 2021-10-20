@@ -16,6 +16,26 @@ title: Black Scholes Model
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+The Black-Scholes model, also known as the Black-Scholes-Merton (BSM) model, is one of the most important concepts in modern financial theory. This mathematical equation estimates the theoretical value of derivatives other investment instruments, taking into account the impact of time and other risk factors.
+
+In this R code, I'm trying to imitate this formula's function.
+
 ## The formula
 ```{r}
 # Black-Scholes formula
