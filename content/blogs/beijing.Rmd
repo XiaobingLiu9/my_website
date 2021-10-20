@@ -15,19 +15,19 @@ title: Welcome to Beijing
 ## Attractions
 From ancient walled capital to showpiece megacity in barely a century, Beijing, spins a breathless yarn of triumph, tragedy, endurance and innovation.
 
-```{r picture}
+```{r picture1}
 knitr::include_graphics(here::here("static","bjpicture1.jpg"), error = FALSE)
 ```
 
-```{r picture}
+```{r picture2}
 knitr::include_graphics(here::here("static","bjpicture2.jpg"), error = FALSE)
 ```
 
-```{r picture}
+```{r picture3}
 knitr::include_graphics(here::here("static","building1.jpg"), error = FALSE)
 ```
 On the right part of the picture above is the landmark modern building in Beijing, here is its close shot. Two period of my internships have finished here.
-```{r picture}
+```{r picture4}
 knitr::include_graphics(here::here("static","building2.jpg"), error = FALSE)
 ```
 
@@ -35,15 +35,15 @@ knitr::include_graphics(here::here("static","building2.jpg"), error = FALSE)
 In Beijing, chī le ma? (have you eaten?) is literally how locals greet their neighbours. Food is the glue that binds all Beijingers, no matter their beliefs or bank balance. 
 
 Beijing roast duck, or Peking duck, is the epitome of Beijing cuisine and the dish you must try when visiting Beijing. The dish is mostly esteemed for the thin, crispy skin, with authentic versions of the dish serving mostly skin and little meat.
-```{r picture}
+```{r picture5}
 knitr::include_graphics(here::here("static","duck.jpg"), error = FALSE)
 ```
 
 Jiaozi (Chinese dumplings) is another dish that can be found anywhere across Beijing. A plate of Jiaozi with a soy sauce, vinegar and chili dip is synonymous with Northern Chinese cuisine.
-```{r picture}
+```{r picture6}
 knitr::include_graphics(here::here("static","jiaozi.jpg"), error = FALSE)
 ```
 Zhajiang mian (Noodles with Soybean Paste) is very popular when it comes to traditional Beijing cuisine, and is sometimes referred to simply as ‘Beijing noodles’. It has three main ingredients: wide hand-pulled noodles, vegetable pieces, and pork. Vegetables vary seasonally, but there are never less than seven kinds. It is an ideal lunch time snack for visitors short on time as it is usually ready seconds after you order. As an added bonus it is very inexpensive.
-```{r picture}
+```{r picture7}
 knitr::include_graphics(here::here("static","noodles.jpg"), error = FALSE)
 ```
