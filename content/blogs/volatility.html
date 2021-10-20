@@ -14,6 +14,8 @@ title: Volatility of SPX
 
 
 
+<p>The Standard and Poor’s 500, or simply the S&amp;P 500, is a stock market index tracking the performance of 500 large companies listed on stock exchanges in the United States. It is one of the most commonly followed equity indices.The index is associated with many ticker symbols, including: ^GSPC, INX, and $SPX, depending on market or website.</p>
+<p>I’m trying to have a brief look at the volatility of SPX.</p>
 <pre class="r"><code>library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(lubridate)
 library(here)
@@ -27,8 +29,6 @@ library(lubridate) #to handle dates
 library(ggrepel)
 # load required package quantmod
 library(quantmod)</code></pre>
-<p>The Standard and Poor’s 500, or simply the S&amp;P 500, is a stock market index tracking the performance of 500 large companies listed on stock exchanges in the United States. It is one of the most commonly followed equity indices.The index is associated with many ticker symbols, including: ^GSPC, INX, and $SPX, depending on market or website.</p>
-<p>I’m trying to have a brief look at the volatility of SPX.</p>
 <pre class="r"><code># download time series for SPX since 2014-01-01 from Yahoo Finance (default source)
 getSymbols(&quot;^GSPC&quot;, from=&#39;2014-01-01&#39;)</code></pre>
 <pre><code>## [1] &quot;^GSPC&quot;</code></pre>

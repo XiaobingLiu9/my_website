@@ -14,6 +14,11 @@ title: Black Scholes Model
 
 
 
+<div id="brief-introduction" class="section level2">
+<h2>Brief introduction</h2>
+<p>The Black-Scholes model, also known as the Black-Scholes-Merton (BSM) model, is one of the most important concepts in modern financial theory. This mathematical equation estimates the theoretical value of derivatives other investment instruments, taking into account the impact of time and other risk factors.</p>
+<p>In this R code, I’m trying to imitate this formula’s function.</p>
+</div>
 <div id="the-formula" class="section level2">
 <h2>The formula</h2>
 <pre class="r"><code># Black-Scholes formula
@@ -40,14 +45,14 @@ bsPut &lt;- function(s, K, sigma, t, r=0, d=0){
 }</code></pre>
 <p>We try 3 examples to apply our formula.</p>
 <pre class="r"><code>bsCall(K=100, s=100, t=1, sigma=.3)</code></pre>
-<pre><code>##          c     delta        Gam
-## 1 11.92354 0.5596177 0.01314931</code></pre>
+<pre><code>##      c delta    Gam
+## 1 11.9  0.56 0.0131</code></pre>
 <pre class="r"><code>bsCall(K=100, s=100, t=1, sigma=.3, r=0.05)</code></pre>
-<pre><code>##          c     delta        Gam
-## 1 14.23125 0.6242517 0.01264776</code></pre>
+<pre><code>##      c delta    Gam
+## 1 14.2 0.624 0.0126</code></pre>
 <pre class="r"><code>bsCall(100, 100, 1, .3)</code></pre>
-<pre><code>##          c     delta         Gam
-## 1 21.58088 0.6079044 0.007015577</code></pre>
+<pre><code>##      c delta     Gam
+## 1 21.6 0.608 0.00702</code></pre>
 </div>
 <div id="explore-the-option-price" class="section level2">
 <h2>Explore the option price</h2>
@@ -64,7 +69,7 @@ tmpp &lt;- function(x) bsPut(S, x, sig, Texp)$p
 par(mfrow=c(1, 2))
 curve(tmpc, from=50, to=150, col=&#39;blue&#39;, xlab=&#39;K&#39;, ylab=&#39;call price&#39;, las=1)
 curve(tmpp, from=50, to=150, col=&#39;blue&#39;, xlab=&#39;K&#39;, ylab=&#39;put price&#39;, las=1)</code></pre>
-<p><img src="/blogs/black_scholes_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/blogs/black_scholes_files/figure-html/unnamed-chunk-3-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="option-price-as-a-function-of-the-underlying" class="section level3">
 <h3>option price as a function of the underlying</h3>
@@ -88,6 +93,6 @@ curve(tmpc, from=50, to=150, col=&#39;blue&#39;, xlab=&#39;s&#39;, ylab=&#39;cal
 curve(tmpPayoffc, from=50, to=150, col=&#39;red&#39;, add=TRUE)
 curve(tmpp, from=50, to=150, col=&#39;blue&#39;, xlab=&#39;s&#39;, ylab=&#39;put price&#39;, las=1)
 curve(tmpPayoffp, from=50, to=150, col=&#39;red&#39;, add=TRUE)</code></pre>
-<p><img src="/blogs/black_scholes_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/blogs/black_scholes_files/figure-html/unnamed-chunk-4-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 </div>

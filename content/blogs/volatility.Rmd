@@ -27,6 +27,10 @@ knitr::opts_chunk$set(
 )
 ```  
 
+The Standard and Poor's 500, or simply the S&P 500, is a stock market index tracking the performance of 500 large companies listed on stock exchanges in the United States. It is one of the most commonly followed equity indices.The index is associated with many ticker symbols, including: ^GSPC, INX, and $SPX, depending on market or website.
+
+I'm trying to have a brief look at the volatility of SPX.
+
 ```{r}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(lubridate)
@@ -43,9 +47,7 @@ library(ggrepel)
 library(quantmod)
 ```
 
-The Standard and Poor's 500, or simply the S&P 500, is a stock market index tracking the performance of 500 large companies listed on stock exchanges in the United States. It is one of the most commonly followed equity indices.The index is associated with many ticker symbols, including: ^GSPC, INX, and $SPX, depending on market or website.
 
-I'm trying to have a brief look at the volatility of SPX.
 
 ```{r}
 # download time series for SPX since 2014-01-01 from Yahoo Finance (default source)
