@@ -35,7 +35,7 @@ spx &lt;- GSPC$GSPC.Adjusted
 
 # dimension/size of the data
 dim(spx)</code></pre>
-<pre><code>## [1] 1961    1</code></pre>
+<pre><code>## [1] 1964    1</code></pre>
 <pre class="r"><code># brief look at spx
 head(spx)</code></pre>
 <pre><code>##            GSPC.Adjusted
@@ -47,36 +47,48 @@ head(spx)</code></pre>
 ## 2014-01-09          1838</code></pre>
 <pre class="r"><code>tail(spx)</code></pre>
 <pre><code>##            GSPC.Adjusted
-## 2021-10-07          4400
-## 2021-10-08          4391
-## 2021-10-11          4361
 ## 2021-10-12          4351
 ## 2021-10-13          4364
-## 2021-10-14          4438</code></pre>
+## 2021-10-14          4438
+## 2021-10-15          4471
+## 2021-10-18          4486
+## 2021-10-19          4520</code></pre>
 <pre class="r"><code># summary statistics
 summary(spx)</code></pre>
 <pre><code>##      Index            GSPC.Adjusted 
 ##  Min.   :2014-01-02   Min.   :1742  
-##  1st Qu.:2015-12-11   1st Qu.:2083  
-##  Median :2017-11-21   Median :2555  
-##  Mean   :2017-11-23   Mean   :2658  
-##  3rd Qu.:2019-11-04   3rd Qu.:2966  
-##  Max.   :2021-10-14   Max.   :4537</code></pre>
-<div id="plot-spx" class="section level1">
-<h1>plot spx</h1>
-<p>plot(spx)</p>
-</div>
-<div id="calculate-annualized-vol-series-of-spx-log-return-using-25-day-rolling-windows" class="section level1">
-<h1>calculate annualized vol series of spx log return, using 25-day rolling windows</h1>
-<p>vol_spx &lt;- volatility(spx, n=25, N=252, calc=‘close’)</p>
-</div>
-<div id="brief-look-at-spx-vol-series" class="section level1">
-<h1>brief look at spx vol series</h1>
-<p>head(vol_spx)
-tail(vol_spx)</p>
-<p>plot(vol_spx)</p>
-<p>spx_scaled &lt;- (spx - mean(spx))/(max(spx) - min(spx))
-plot(spx_scaled)
-lines(vol_spx, col=‘blue’, lty=2)
-```</p>
-</div>
+##  1st Qu.:2015-12-13   1st Qu.:2084  
+##  Median :2017-11-23   Median :2557  
+##  Mean   :2017-11-25   Mean   :2661  
+##  3rd Qu.:2019-11-06   3rd Qu.:2971  
+##  Max.   :2021-10-19   Max.   :4537</code></pre>
+<pre class="r"><code># plot spx
+plot(spx)</code></pre>
+<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-3-1.png" width="648" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># calculate annualized vol series of spx log return, using 25-day rolling windows
+vol_spx &lt;- volatility(spx, n=25, N=252, calc=&#39;close&#39;)
+
+# brief look at spx vol series
+head(vol_spx)</code></pre>
+<pre><code>##            [,1]
+## 2014-01-02   NA
+## 2014-01-03   NA
+## 2014-01-06   NA
+## 2014-01-07   NA
+## 2014-01-08   NA
+## 2014-01-09   NA</code></pre>
+<pre class="r"><code>tail(vol_spx)</code></pre>
+<pre><code>##             [,1]
+## 2021-10-12 0.144
+## 2021-10-13 0.144
+## 2021-10-14 0.154
+## 2021-10-15 0.155
+## 2021-10-18 0.154
+## 2021-10-19 0.154</code></pre>
+<pre class="r"><code>plot(vol_spx)</code></pre>
+<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-3-2.png" width="648" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>spx_scaled &lt;- (spx - mean(spx))/(max(spx) - min(spx))
+plot(spx_scaled)</code></pre>
+<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-3-3.png" width="648" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>lines(vol_spx, col=&#39;blue&#39;, lty=2)</code></pre>
+<p><img src="/blogs/volatility_files/figure-html/unnamed-chunk-3-4.png" width="648" style="display: block; margin: auto;" /></p>

@@ -61,7 +61,7 @@ tail(spx)
 summary(spx)
 ```
 
-
+```{r}
 # plot spx
 plot(spx)
 
